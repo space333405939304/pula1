@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Balneario Paraíso</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <div class="background-particles">
+        <span></span>
+        <span></span>
+        <span></span>
+        
+        <span></span>
+        <span></span>
+    </div>
+    <header class="scroll-animate">
+        <h1>Menú Balneario Paraíso</h1>
+        <nav>
+            <a href="Pulha.html">Inicio</a>
+            <a href="reserva.html">Reservas</a>
+            <a href="#menu">Menú</a>
+        </nav>
+    </header>
+    <main id="menu" class="scroll-animate">
+        <section class="menu-section">
+            <h2>Desayunos</h2>
+            <div class="menu-item" data-nombre="Desayuno Catracho" data-precio="120" data-img="Desayuno.png">
+                <img src="img/Desayuno.png" alt="Desayuno Catracho">
+                <div class="item-info">
+                    <h3>Desayuno Catracho</h3>
+                    <p>Frijoles, huevo, plátano, queso y tortillas.</p>
+                    <span class="precio">L.120</span>
+                    <button class="agregar-carrito">Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="menu-item" data-nombre="Omelette Especial" data-precio="140" data-img="img/omelet.png">
+                <img src="img/omelet.png" alt="Omelette Especial">
+                <div class="item-info">
+                    <h3>Omelette Especial</h3>
+                    <p>Omelette de vegetales y jamón, acompañado de pan artesanal.</p>
+                    <span class="precio">L.140</span>
+                    <button class="agregar-carrito">Agregar al carrito</button>
+                </div>
+            </div>
+        </section>
+        <section class="menu-section">
+            <h2>Almuerzos</h2>
+            <div class="menu-item" data-nombre="Pescado Frito" data-precio="220" data-img="img/Pescado.png">
+                <img src="img/Pescado.png" alt="Pescado Frito">
+                <div class="item-info">
+                    <h3>Pescado Frito</h3>
+                    <p>Pescado entero frito, arroz, ensalada y tajadas.</p>
+                    <span class="precio">L.220</span>
+                    <button class="agregar-carrito">Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="menu-item" data-nombre="Pollo a la Parrilla" data-precio="180" data-img="img/Pollo.png">
+                <img src="img/Pollo.png" alt="Pollo a la Parrilla">
+                <div class="item-info">
+                    <h3>Pollo a la Parrilla</h3>
+                    <p>Pechuga de pollo a la parrilla con papas y ensalada fresca.</p>
+                    <span class="precio">L.180</span>
+                    <button class="agregar-carrito">Agregar al carrito</button>
+                </div>
+            </div>
+        </section>
+        <section class="menu-section">
+            <h2>Cenas</h2>
+            <div class="menu-item" data-nombre="Carne Asada" data-precio="200" data-img="img/Carne asada.png">
+                <img src="img/Carne asada.png" alt="Carne Asada">
+                <div class="item-info">
+                    <h3>Carne Asada</h3>
+                    <p>Carne asada, chimol, frijoles y tortillas.</p>
+                    <span class="precio">L.200</span>
+                    <button class="agregar-carrito">Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="menu-item" data-nombre="Ensalada César con Pollo" data-precio="150" data-img="img/Ensalada.png">
+                <img src="img/Ensalada.png" alt="Ensalada César con Pollo">
+                <div class="item-info">
+                    <h3>Ensalada César con Pollo</h3>
+                    <p>Ensalada fresca con pollo a la plancha y aderezo César.</p>
+                    <span class="precio">L.150</span>
+                    <button class="agregar-carrito">Agregar al carrito</button>
+                </div>
+            </div>
+        </section>
+        <section class="menu-section">
+            <h2>Bebidas</h2>
+            <div class="menu-item" data-nombre="Jugo Natural" data-precio="50" data-img="img/Natural.png">
+                <img src="img/Natural.png" alt="Jugo Natural">
+                <div class="item-info">
+                    <h3>Jugo Natural</h3>
+                    <p>Jugo de frutas naturales (naranja, piña, sandía).</p>
+                    <span class="precio">L.50</span>
+                    <button class="agregar-carrito">Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="menu-item" data-nombre="Café de Palo" data-precio="30" data-img="img/Cafe.png">
+                <img src="img/Cafe.png" alt="Café de Palo">
+                <div class="item-info">
+                    <h3>Café de Palo</h3>
+                    <p>Café tradicional hondureño.</p>
+                    <span class="precio">L.30</span>
+                    <button class="agregar-carrito">Agregar al carrito</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="carrito-modal" class="carrito-modal scroll-animate">
+        <div class="carrito-contenido">
+            <span id="cerrar-carrito" class="cerrar-carrito">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <div id="carrito-items"></div>
+            <div id="carrito-total"></div>
+            <button id="generar-factura">Generar factura</button>
+            <div id="factura" style="display:none;"></div>
+        </div>
+    </div>
+    <footer class="scroll-animate">
+        <p>&copy; 2025 Balneario Paraíso. Todos los derechos reservados.</p>
+    </footer>
+    <button id="carrito-btn" style="background:#fff; border:none; border-radius:50%; width:62px; height:62px; display:flex; align-items:center; justify-content:center; position:absolute; top:20px; right:30px; z-index:10; padding:0;">
+      <div style="flex:1; display:flex; align-items:center; justify-content:flex-start; padding-left:8px;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 6h15l-1.5 8.5a1 1 0 0 1-1 .8H8.5a1 1 0 0 1-1-.8L5 4H2"/>
+          <circle cx="9" cy="20" r="1.5"/>
+          <circle cx="18" cy="20" r="1.5"/>
+        </svg>
+      </div>
+      <div style="flex:0 0 auto; display:flex; align-items:flex-start; justify-content:flex-end; width:0;">
+        <span id="carrito-contador" style="background:#ff5252; color:#fff; border-radius:50%; padding:0px 4px; font-size:0.65em; font-weight:normal; position:absolute; top:-6px; right:-6px; box-shadow:0 2px 8px rgba(0,0,0,0.18); border:2px solid #fff;">0</span>
+      </div>
+    </button>
+    <script src="menu.js"></script>
+    <script>
+    // Animación al hacer scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right').forEach(el => {
+      observer.observe(el);
+    });
+    </script>
+</body>
+</html> 

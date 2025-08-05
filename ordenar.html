@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realizar Pedido</title>
+    <link rel="stylesheet" href="ordenar.css">
+</head>
+<body>
+    <div class="background-particles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <video autoplay muted loop id="video-background">
+        <source src="img/Video de WhatsApp 2025-06-16 a las 15.37.50_2c341606.mp4" type="video/mp4">
+    </video>
+
+    <div class="menu-header scroll-animate">
+        <h1>Nuestro Menú</h1>
+        <p>Descubre una deliciosa selección de platillos, bebidas y postres.</p>
+    </div>
+
+    <div class="order-container scroll-animate">
+        <div class="menu-nav">
+            <a href="#comida" class="tab-link active" data-tab="comida">Comida</a>
+            <a href="#bebidas" class="tab-link" data-tab="bebidas">Bebidas</a>
+            <a href="#postres" class="tab-link" data-tab="postres">Postres</a>
+        </div>
+
+        <div class="menu-and-form-wrapper">
+            <div class="menu-display-section">
+                <!-- Sección de Comida -->
+                <div id="comida" class="menu-section tab-content active">
+                    <h2>Platillos</h2>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/180x120?text=Trucha" alt="Trucha a la Plancha">
+                        <div class="item-content">
+                            <span class="item-name">Trucha a la Plancha</span>
+                            <span class="item-description">Fresca trucha local, cocinada a la plancha con hierbas aromáticas y un toque de limón.</span>
+                        </div>
+                        <span class="item-price">L.220.00</span>
+                        <button class="order-button" data-item-name="Trucha a la Plancha" data-item-price="220.00">Añadir al Pedido</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/180x120?text=Mariscos" alt="Sopa de Mariscos">
+                        <div class="item-content">
+                            <span class="item-name">Sopa de Mariscos</span>
+                            <span class="item-description">Exquisita sopa con una variedad de mariscos frescos de la región.</span>
+                        </div>
+                        <span class="item-price">L.180.00</span>
+                        <button class="order-button" data-item-name="Sopa de Mariscos" data-item-price="180.00">Añadir al Pedido</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/180x120?text=Pollo" alt="Pollo en Salsa de Champiñones">
+                        <div class="item-content">
+                            <span class="item-name">Pollo en Salsa de Champiñones</span>
+                            <span class="item-description">Jugoso pollo bañado en una cremosa salsa de champiñones, acompañado de arroz y vegetales.</span>
+                        </div>
+                        <span class="item-price">L.190.00</span>
+                        <button class="order-button" data-item-name="Pollo en Salsa de Champiñones" data-item-price="190.00">Añadir al Pedido</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/180x120?text=Pescado" alt="Pescado Frito con Tajadas">
+                        <div class="item-content">
+                            <span class="item-name">Pescado Frito con Tajadas</span>
+                            <span class="item-description">Crujiente pescado frito acompañado de tajadas de plátano verde y encurtido.</span>
+                        </div>
+                        <span class="item-price">L.210.00</span>
+                        <button class="order-button" data-item-name="Pescado Frito con Tajadas" data-item-price="210.00">Añadir al Pedido</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/180x120?text=Carne Asada" alt="Carne Asada con Chimichurri">
+                        <div class="item-content">
+                            <span class="item-name">Carne Asada con Chimichurri</span>
+                            <span class="item-description">Tierna carne de res asada a la perfección, servida con una vibrante salsa chimichurri y papas rústicas.</span>
+                        </div>
+                        <span class="item-price">L.250.00</span>
+                        <button class="order-button" data-item-name="Carne Asada con Chimichurri" data-item-price="250.00">Añadir al Pedido</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/180x120?text=Pasta Primavera" alt="Pasta Primavera">
+                        <div class="item-content">
+                            <span class="item-name">Pasta Primavera</span>
+                            <span class="item-description">Pasta fresca con una colorida mezcla de vegetales de temporada salteados en aceite de oliva y ajo.</span>
+                        </div>
+                        <span class="item-price">L.170.00</span>
+                        <button class="order-button" data-item-name="Pasta Primavera" data-item-price="170.00">Añadir al Pedido</button>
+                    </div>
+                </div>
+
+                <!-- Sección de Bebidas -->
+                <div id="bebidas" class="menu-section tab-content">
+                    <h2>Bebidas</h2>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/180x120?text=Limonada" alt="Limonada Natural">
+                        <div class="item-content">
+                            <span class="item-name">Limonada Natural</span>
+                            <span class="item-description">Refrescante limonada hecha con limones frescos y un toque de menta.</span>
+                        </div>
+                        <span class="item-price">L.60.00</span>
+                        <button class="order-button" data-item-name="Limonada Natural" data-item-price="60.00">Añadir al Pedido</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/180x120?text=Jugo de Naranja" alt="Jugo de Naranja">
+                        <div class="item-content">
+                            <span class="item-name">Jugo de Naranja</span>
+                            <span class="item-description">Jugo de naranja natural, recién exprimido.</span>
+                        </div>
+                        <span class="item-price">L.70.00</span>
+                        <button class="order-button" data-item-name="Jugo de Naranja" data-item-price="70.00">Añadir al Pedido</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/180x120?text=Agua Mineral" alt="Agua Mineral">
+                        <div class="item-content">
+                            <span class="item-name">Agua Mineral</span>
+                            <span class="item-description">Agua mineral fría, ideal para acompañar cualquier comida.</span>
+                        </div>
+                        <span class="item-price">L.50.00</span>
+                        <button class="order-button" data-item-name="Agua Mineral" data-item-price="50.00">Añadir al Pedido</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/180x120?text=Café Americano" alt="Café Americano">
+                        <div class="item-content">
+                            <span class="item-name">Café Americano</span>
+                            <span class="item-description">Café recién hecho, de intensidad media, perfecto para cualquier momento del día.</span>
+                        </div>
+                        <span class="item-price">L.45.00</span>
+                        <button class="order-button" data-item-name="Café Americano" data-item-price="45.00">Añadir al Pedido</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/180x120?text=Té Helado" alt="Té Helado de Durazno">
+                        <div class="item-content">
+                            <span class="item-name">Té Helado de Durazno</span>
+                            <span class="item-description">Té negro helado con un dulce toque de durazno, muy refrescante.</span>
+                        </div>
+                        <span class="item-price">L.55.00</span>
+                        <button class="order-button" data-item-name="Té Helado de Durazno" data-item-price="55.00">Añadir al Pedido</button>
+                    </div>
+                </div>
+
+                <!-- Sección de Postres -->
+                <div id="postres" class="menu-section tab-content">
+                    <h2>Postres</h2>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/180x120?text=Pastel de Chocolate" alt="Pastel de Chocolate">
+                        <div class="item-content">
+                            <span class="item-name">Pastel de Chocolate</span>
+                            <span class="item-description">Delicioso pastel de chocolate, suave y húmedo, cubierto con ganache.</span>
+                        </div>
+                        <span class="item-price">L.90.00</span>
+                        <button class="order-button" data-item-name="Pastel de Chocolate" data-item-price="90.00">Añadir al Pedido</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/180x120?text=Flan" alt="Flan Casero">
+                        <div class="item-content">
+                            <span class="item-name">Flan Casero</span>
+                            <span class="item-description">Flan tradicional con caramelo, suave y cremoso.</span>
+                        </div>
+                        <span class="item-price">L.75.00</span>
+                        <button class="order-button" data-item-name="Flan Casero" data-item-price="75.00">Añadir al Pedido</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/180x120?text=Helado" alt="Helado de Vainilla">
+                        <div class="item-content">
+                            <span class="item-name">Helado de Vainilla</span>
+                            <span class="item-description">Clásico helado de vainilla, servido con sirope de chocolate.</span>
+                        </div>
+                        <span class="item-price">L.65.00</span>
+                        <button class="order-button" data-item-name="Helado de Vainilla" data-item-price="65.00">Añadir al Pedido</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/180x120?text=Cheesecake" alt="Cheesecake de Fresa">
+                        <div class="item-content">
+                            <span class="item-name">Cheesecake de Fresa</span>
+                            <span class="item-description">Cremoso cheesecake con una base de galleta y cubierta de fresas frescas.</span>
+                        </div>
+                        <span class="item-price">L.95.00</span>
+                        <button class="order-button" data-item-name="Cheesecake de Fresa" data-item-price="95.00">Añadir al Pedido</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-details-section">
+                <h1>Tu Pedido</h1>
+                <div class="order-form-section">
+                    <form id="orderForm" class="order-form">
+                        <label for="roomNumber">Número de Habitación:</label>
+                        <input type="text" id="roomNumber" name="roomNumber" required>
+
+                        <label for="customerName">Nombre:</label>
+                        <input type="text" id="customerName" name="customerName" required>
+
+                        <label for="customerPhone">Teléfono:</label>
+                        <input type="tel" id="customerPhone" name="customerPhone" required>
+
+                        <label for="specialInstructions">Instrucciones Especiales (opcional):</label>
+                        <textarea id="specialInstructions" name="specialInstructions" rows="4"></textarea>
+
+                        <div class="order-buttons-group">
+                            <button type="submit" id="placeOrderButton">Realizar Pedido</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="order-summary-section">
+                    <h2>Resumen del Pedido</h2>
+                    <div id="currentOrderList"><p style="color: #777; font-style: italic;">No hay artículos en el pedido aún.</p></div>
+                    <div class="summary-total" id="currentOrderTotal">Total: L.0.00</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="invoiceContainer" class="invoice-container">
+            <h2>Factura de Pedido</h2>
+            <div class="invoice-details" id="invoiceDetails"></div>
+            <div class="invoice-total" id="invoiceTotal"></div>
+        </div>
+
+        <a href="catalogo.html" class="back-button">Regresar al Catálogo</a>
+    </div>
+
+    <script>
+        let currentOrder = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const roomNumberField = document.getElementById('roomNumber');
+            const customerNameField = document.getElementById('customerName');
+            const customerPhoneField = document.getElementById('customerPhone');
+            const specialInstructionsField = document.getElementById('specialInstructions');
+            const orderForm = document.getElementById('orderForm');
+            const placeOrderButton = document.getElementById('placeOrderButton');
+            const invoiceContainer = document.getElementById('invoiceContainer');
+            const invoiceDetails = document.getElementById('invoiceDetails');
+            const invoiceTotal = document.getElementById('invoiceTotal');
+            const currentOrderList = document.getElementById('currentOrderList');
+            const currentOrderTotal = document.getElementById('currentOrderTotal');
+
+            const renderOrderList = () => {
+                currentOrderList.innerHTML = '';
+                let totalOrderPrice = 0;
+
+                if (currentOrder.length === 0) {
+                    currentOrderList.innerHTML = '<p style="color: #777; font-style: italic;">No hay artículos en el pedido aún.</p>';
+                }
+
+                currentOrder.forEach(item => {
+                    const itemTotal = item.quantity * item.price;
+                    totalOrderPrice += itemTotal;
+
+                    const listItem = document.createElement('div');
+                    listItem.classList.add('summary-item');
+                    listItem.innerHTML = `
+                        <span class="item-details-text">${item.name} (x${item.quantity})</span>
+                        <span>L.${itemTotal.toFixed(2)}</span>
+                        <button class="remove-item" data-item-name="${item.name}">X</button>
+                    `;
+                    currentOrderList.appendChild(listItem);
+                });
+
+                currentOrderTotal.textContent = `Total: L.${totalOrderPrice.toFixed(2)}`;
+
+                if (currentOrder.length === 0) {
+                    invoiceContainer.style.display = 'none';
+                }
+            };
+
+            document.querySelectorAll('.order-button').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const name = event.target.dataset.itemName;
+                    const price = parseFloat(event.target.dataset.itemPrice);
+                    
+                    const existingItemIndex = currentOrder.findIndex(item => item.name === name);
+
+                    if (existingItemIndex > -1) {
+                        currentOrder[existingItemIndex].quantity += 1;
+                    } else {
+                        currentOrder.push({ name, price, quantity: 1 });
+                    }
+
+                    renderOrderList();
+                });
+            });
+
+            currentOrderList.addEventListener('click', (event) => {
+                if (event.target.classList.contains('remove-item')) {
+                    const nameToRemove = event.target.dataset.itemName;
+                    const itemIndex = currentOrder.findIndex(item => item.name === nameToRemove);
+
+                    if (itemIndex > -1) {
+                        if (currentOrder[itemIndex].quantity > 1) {
+                            currentOrder[itemIndex].quantity -= 1;
+                        } else {
+                            currentOrder.splice(itemIndex, 1);
+                        }
+                    }
+                    renderOrderList();
+                }
+            });
+
+            placeOrderButton.addEventListener('click', async (event) => {
+                event.preventDefault();
+
+                const roomNumber = roomNumberField.value;
+                const customerName = customerNameField.value;
+                const customerPhone = customerPhoneField.value;
+                const specialInstructions = specialInstructionsField.value;
+
+                if (currentOrder.length === 0) {
+                    alert('Por favor, añada al menos un artículo al pedido.');
+                    return;
+                }
+
+                if (!roomNumber || !customerName || !customerPhone) {
+                    alert('Por favor, ingrese el número de habitación, su nombre y su teléfono.');
+                    return;
+                }
+
+                let invoiceItemsHtml = '';
+                let finalTotal = 0;
+
+                const now = new Date();
+                const orderDateTime = now.toLocaleString();
+
+                invoiceItemsHtml += `
+                    <div class="invoice-item">
+                        <span>Fecha y Hora del Pedido:</span>
+                        <span>${orderDateTime}</span>
+                    </div>
+                    <div class="invoice-item">
+                        <span>Nombre del Cliente:</span>
+                        <span>${customerName}</span>
+                    </div>
+                    <div class="invoice-item">
+                        <span>Teléfono:</span>
+                        <span>${customerPhone}</span>
+                    </div>
+                `;
+
+                let plainTextInvoice = `Resumen del Pedido:\n\n`;
+                plainTextInvoice += `Fecha y Hora del Pedido: ${orderDateTime}\n`;
+                plainTextInvoice += `Nombre del Cliente: ${customerName}\n`;
+                plainTextInvoice += `Teléfono: ${customerPhone}\n`;
+                plainTextInvoice += `Número de Habitación: ${roomNumber}\n\n`;
+
+                currentOrder.forEach(item => {
+                    const itemTotal = item.quantity * item.price;
+                    finalTotal += itemTotal;
+                    invoiceItemsHtml += `
+                        <div class="invoice-item">
+                            <span>${item.name} (x${item.quantity})</span>
+                            <span>L.${itemTotal.toFixed(2)}</span>
+                        </div>
+                    `;
+                    plainTextInvoice += `${item.name} (x${item.quantity}) - L.${itemTotal.toFixed(2)}\n`;
+                });
+
+                invoiceItemsHtml += `
+                    <div class="invoice-item">
+                        <span>Número de Habitación:</span>
+                        <span>${roomNumber}</span>
+                    </div>
+                `;
+
+                if (specialInstructions) {
+                    invoiceItemsHtml += `
+                        <div class="invoice-item">
+                            <span>Instrucciones Especiales:</span>
+                            <span>${specialInstructions}</span>
+                        </div>
+                    `;
+                    plainTextInvoice += `\nInstrucciones Especiales: ${specialInstructions}\n`;
+                }
+
+                plainTextInvoice += `\nTotal a Pagar: L.${finalTotal.toFixed(2)}\n`;
+
+                invoiceDetails.innerHTML = invoiceItemsHtml;
+                invoiceTotal.textContent = `Total a Pagar: L.${finalTotal.toFixed(2)}`;
+
+                const formData = new FormData();
+                formData.append('roomNumber', roomNumber);
+                formData.append('customerName', customerName);
+                formData.append('customerPhone', customerPhone);
+                formData.append('specialInstructions', specialInstructions);
+                formData.append('orderDateTime', orderDateTime);
+                formData.append('_subject', `Nuevo Pedido de Menú para ${customerName} - Habitación ${roomNumber}`);
+                formData.append('_replyto', customerName);
+                formData.append('invoiceContent', plainTextInvoice);
+
+                try {
+                    const response = await fetch('YOUR_FORMSPREE_ENDPOINT_URL', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        alert('Pedido realizado con éxito');
+
+                        roomNumberField.value = '';
+                        customerNameField.value = '';
+                        customerPhoneField.value = '';
+                        specialInstructionsField.value = '';
+                        currentOrder = [];
+                        renderOrderList();
+
+                        invoiceContainer.style.display = 'none';
+                        orderForm.style.display = 'block';
+                        document.querySelector('.order-summary-section').style.display = 'block';
+
+                    } else {
+                        alert('Hubo un error al enviar el pedido. Por favor, intente de nuevo.');
+                        console.error('Form submission failed:', response.status, response.statusText);
+                        const errorData = await response.json();
+                        console.error('Formspree error:', errorData);
+                    }
+                } catch (error) {
+                    console.error('Error al enviar el formulario:', error);
+                    alert('Hubo un error de red al enviar el pedido. Por favor, intente de nuevo.');
+                }
+            });
+
+            const tabLinks = document.querySelectorAll('.tab-link');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetTab = e.target.dataset.tab;
+
+                    tabContents.forEach(content => {
+                        if (content.id === targetTab) {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+
+                    tabLinks.forEach(l => l.classList.remove('active'));
+                    e.target.classList.add('active');
+                });
+            });
+
+            renderOrderList();
+        });
+
+        // Animación al hacer scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html> 

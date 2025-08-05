@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Balneario Paraíso</title>
+    <link rel="stylesheet" href="Pulha.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-particles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <header>
+        <div class="header-content">
+            <img src="img/logo.png" alt="Logo Pulhapanzak" class="logo-header logo-grande">
+            <span>PULHAPANZAK</span>
+        </div>
+    </header>
+    <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galería</a>
+        <a href="catalogo.html" class="btn-catalogo-top">Catálogo</a>
+        <a href="#contacto">Contacto</a>
+        <a href="reserva.html" class="btn-reservas-top">Reservas</a>
+    </nav>
+
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <img src="img/inicio.jpg" alt="Imagen 1">
+            <img src="img/rotulopul.jpg" alt="Imagen 2">
+            <img src="img/cabaña.jpg" alt="Imagen 3">
+            <img src="img/pul.jpg" alt="Imagen 4">
+            <img src="img/inicio.jpg" alt="Imagen 1">
+        </div>
+    </div>
+
+    <main>
+        <section id="servicios" class="scroll-animate">
+            <h2>Servicios</h2>
+            <div class="services">
+                <div class="service-item scroll-animate-left">
+                    <h3>Tirolesa</h3>
+                    <p>Disfruta de nuestras tirolesa pasando encima de la cascada de 
+                        Pulhapanzak apresiando la hermosa vista.</p>
+                </div>
+                <div class="service-item scroll-animate">
+                    <h3>Restaurante</h3>
+                    <p>Disfruta de nuestra deliciosa comida y bebidas.</p>
+                </div>
+                <div class="service-item scroll-animate-right">
+                    <h3>Recorrido turistico </h3>
+                    <p>Disfruta de nuestro pequeño recorrido alrededor de la cascada 
+                        y de nuestras areas verdes dentro de nuestro centro turistico.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="scroll-animate">
+            <h2>Galería</h2>
+            <div class="gallery scroll-animate">
+                <img src="img/tirolesa.jpg" alt="Tirolesa " />
+                <img src="img/nacimiento.jpg" alt="Área de picnic" />
+                <img src="img/cascada.jpg" alt="Restaurante" />
+            </div>
+        </section>
+
+        <section id="contacto" class="scroll-animate">
+            <h2>Contacto</h2>
+            <div class="formularios-container">
+                <!-- Formulario de Reserva -->
+                <form action="https://formsubmit.co/deboraguifarro@gmail.com" method="POST" class="formulario-reserva scroll-animate-left">
+                    <input type="hidden" name="_captcha" value="false">
+                    <h3>Reserva tu Visita</h3>
+                    <label for="fecha">Fecha de Visita:</label>
+                    <input type="date" id="fecha" name="fecha" required />
+
+                    <label for="personas">Número de Personas:</label>
+                    <input type="number" id="personas" name="personas" min="1" required />
+
+                    <label for="tipo-visita">Tipo de Visita:</label>
+                    <select id="tipo-visita" name="tipo-visita" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="individual">Individual</option>
+                        <option value="grupo">Grupo</option>
+                        <option value="evento">Evento Especial</option>
+                    </select>
+
+                    <button type="submit">Reservar</button>
+                </form>
+
+                <!-- Formulario de Contacto General -->
+                <form action="https://formsubmit.co/deboraguifarro@gmail.com
+                " method="POST" class="formulario-contacto scroll-animate-right">
+                    <input type="hidden" name="_captcha" value="false">
+                    <h3>Contáctanos</h3>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required />
+
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required />
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" />
+
+                    <label for="asunto">Asunto:</label>
+                    <select id="asunto" name="asunto" required>
+                        <option value="">Seleccione un asunto</option>
+                        <option value="informacion">Información General</option>
+                        <option value="reservas">Reservas</option>
+                        <option value="sugerencias">Sugerencias</option>
+                        <option value="quejas">Quejas y Reclamos</option>
+                    </select>
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div class="mapa-ubicacion">
+        <h2>¿Dónde estamos?</h2>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3872.013964893624!2d-88.0123456!3d15.0167890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f664f1e7e6e6e6e%3A0x123456789abcdef!2sCatarata%20Pulhapanzak!5e0!3m2!1ses-419!2shn!4v1680000000000!5m2!1ses-419!2shn" 
+            width="100%" 
+            height="500" 
+            style="border:0; border-radius:20px; margin-bottom:30px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <div id="mensaje-confirmacion" class="mensaje-confirmacion"></div>
+
+    <footer>
+        <div class="footer-content-wrapper">
+            <div class="contact-info">
+                <h3>Información de Contacto</h3>
+                <p><strong>Teléfono:</strong> +504 9999-9999</p>
+                <p><strong>Correo:</strong> info@pulhapanzak.com</p>
+                <p><strong>Dirección:</strong> Desde la calle principal girando a
+                 mano derecha luego sigue recto hasta llegar al desvío del 
+                 balneario  Junto al campo, Cortés, Honduras</p>
+                <p><strong>Servicios:</strong> Hospedaje, Restaurante, Actividades</p>
+            </div>
+            <div class="social-media">
+                <h3>Síguenos</h3>
+                <a href="https://wa.me/XXXXXXXXXX" target="_blank" aria-label="WhatsApp"><img src="img/whatsapp.png" alt="Logo de WhatsApp"></a>
+                <a href="https://www.facebook.com/pulhapanzak/?locale=es_LA" target="_blank" aria-label="Facebook"><img src="img/facebook.png" alt="Logo de Facebook"></a>
+                <a href="https://www.instagram.com/pulhahn/" target="_blank" aria-label="Instagram"><img src="img/instagram (2).png" alt="Logo de Instagram"></a>
+                <div class="qr-code-container">
+                    <p>¡Escanea para reservar!</p>
+                    <img src="img/qr_reserva.jpg" alt="Código QR para reservar" class="qr-code-img">
+                </div>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2025 Pulhapanzak San Buenaventura.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const formularios = document.querySelectorAll('form');
+            const mensajeConfirmacion = document.getElementById('mensaje-confirmacion');
+
+            formularios.forEach(formulario => {
+                formulario.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(this);
+                    const tipoFormulario = this.classList.contains('formulario-reserva') ? 'reserva' :
+                                         this.classList.contains('formulario-contacto') ? 'contacto' : 'suscripción';
+
+                    fetch(this.action, {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            mensajeConfirmacion.textContent = tipoFormulario === 'reserva' ? 
+                                '¡Reservación agregada exitosamente!' :
+                                tipoFormulario === 'contacto' ? 
+                                '¡Mensaje enviado exitosamente!' :
+                                '¡Suscripción realizada exitosamente!';
+                            
+                            mensajeConfirmacion.style.display = 'block';
+                            this.reset();
+
+                            setTimeout(() => {
+                                mensajeConfirmacion.style.display = 'none';
+                            }, 3000);
+                        }
+                    })
+                    .catch(error => {
+                        mensajeConfirmacion.textContent = 'Hubo un error al procesar tu solicitud. Por favor, intenta nuevamente.';
+                        mensajeConfirmacion.style.display = 'block';
+                    });
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carouselSlide = document.querySelector('.carousel-slide');
+            const carouselImages = document.querySelectorAll('.carousel-slide img');
+
+            let counter = 0;
+            // Calcular el ancho de cada diapositiva en base al contenedor del carrusel
+            const slideWidth = carouselSlide.parentElement.clientWidth;
+            const totalImages = carouselImages.length;
+
+            // Posicionar el carrusel inicialmente en la primera imagen real
+            carouselSlide.style.transform = 'translateX(' + (-slideWidth * counter) + 'px)';
+
+            function nextSlide() {
+                carouselSlide.style.transition = 'transform 0.5s ease-in-out'; // Habilita la transición
+                counter++;
+
+                carouselSlide.style.transform = 'translateX(' + (-slideWidth * counter) + 'px)';
+
+                if (counter >= totalImages - 1) { // totalImages - 1 porque la última es la copia de la primera
+                    setTimeout(() => {
+                        carouselSlide.style.transition = 'none'; // Deshabilita la transición para el salto
+                        counter = 0;
+                        carouselSlide.style.transform = 'translateX(' + (-slideWidth * counter) + 'px)';
+                    }, 500); // El tiempo debe coincidir con la duración de la transición CSS
+                }
+            }
+
+            // Cambiar imagen cada 3 segundos (ajusta según necesites)
+            setInterval(nextSlide, 3000);
+        });
+    </script>
+
+    <script>
+        // Scroll suave para navegación interna
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Animación al hacer scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

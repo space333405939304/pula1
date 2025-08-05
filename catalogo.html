@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Catálogo</title>
+    <link rel="stylesheet" href="catalogo.css">
+</head>
+<body>
+    <div class="background-particles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <header class="catalog-header scroll-animate">
+        <h1>Nuestro Catálogo de Actividades</h1>
+        <p>Descubre todas las emocionantes actividades y servicios que ofrecemos para hacer tu visita inolvidable.</p>
+    </header>
+
+    <div class="search-container scroll-animate">
+        <input type="text" id="searchInput" placeholder="Buscar actividades...">
+        <button onclick="filterActivities()">Buscar</button>
+    </div>
+
+    <main class="catalog-container scroll-animate">
+        <div class="catalog-item">
+            <img src="img/tirolesa.jpg" alt="Tirolesa">
+            <div class="item-details">
+                <h3>Aventura en Tirolesa</h3>
+                <p>Experimenta la emoción de deslizarte por encima de la cascada, con vistas impresionantes y pura adrenalina. Ideal para amantes de la aventura.</p>
+                <span class="item-price">L.150.00 </span>
+                <a href="detalle_actividad.html?activity=tirolesa" class="catalog-button">¡Más Información!</a>
+            </div>
+        </div>
+
+        <div class="catalog-item">
+            <img src="img/cascada.jpg" alt="Recorrido a la Cascada">
+            <div class="item-details">
+                <h3>Tour de la Cascada y Naturaleza</h3>
+                <p>Un relajante recorrido guiado por senderos naturales que te llevarán a los mejores puntos de vista de la majestuosa cascada y la flora local.</p>
+                <span class="item-price">L.100.00 </span>
+                <a href="detalle_actividad.html?activity=cascada" class="catalog-button">¡Más Información!</a>
+            </div>
+        </div>
+
+        <div class="catalog-item">
+            <img src="img/nacimiento.jpg" alt="Áreas de Picnic">
+            <div class="item-details">
+                <h3>Día de Picnic Familiar</h3>
+                <p>Disfruta de nuestras amplias y hermosas áreas verdes, perfectas para un día de picnic relajante con toda la familia.</p>
+                <span class="item-price">L.50.00 </span>
+                <a href="detalle_actividad.html?activity=picnic" class="catalog-button">Más Información</a>
+            </div>
+        </div>
+
+        <div class="catalog-item">
+            <img src="img/rotulo.jpg" alt="Restaurante">
+            <div class="item-details">
+                <h3>Experiencia Gastronómica</h3>
+                <p>Deléitate con la auténtica cocina local en nuestro restaurante, con ingredientes frescos y un ambiente acogedor junto al río.</p>
+                <span class="item-price">Desde L.150.00</span>
+                <a href="detalle_actividad.html?activity=gastronomica" class="catalog-button">Ver Menú</a>
+            </div>
+        </div>
+
+        <div class="catalog-item">
+            <img src="img/kayak.jpg" alt="Kayaking">
+            <div class="item-details">
+                <h3>Aventura en Kayak</h3>
+                <p>Explora las tranquilas aguas del río en kayak, una forma perfecta de conectar con la naturaleza y disfrutar del paisaje.</p>
+                <span class="item-price">L.120.00 </span>
+                <a href="detalle_actividad.html?activity=kayak" class="catalog-button">¡Mas informacion!</a>
+            </div>
+        </div>
+
+        <div class="catalog-item">
+            <img src="img/mirador.jpg" alt="Observación de Aves">
+            <div class="item-details">
+                <h3>Observación de Aves</h3>
+                <p>Únete a nuestros expertos guías en un tour para descubrir la increíble variedad de aves locales en su hábitat natural.</p>
+                <span class="item-price">L.50.00 </span>
+                <a href="detalle_actividad.html?activity=aves" class="catalog-button">¡Mas informacion!</a>
+            </div>
+        </div>
+    </main>
+
+    <div class="back-to-home">
+        <a href="Pulha.html">Regresar a Inicio</a>
+    </div>
+
+    <script>
+        function filterActivities() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const catalogItems = document.getElementsByClassName('catalog-item');
+
+            for (let i = 0; i < catalogItems.length; i++) {
+                const h3 = catalogItems[i].getElementsByTagName('h3')[0];
+                const p = catalogItems[i].getElementsByTagName('p')[0];
+                if (h3 || p) {
+                    const textValue = (h3 ? h3.textContent : '') + ' ' + (p ? p.textContent : '');
+                    if (textValue.toLowerCase().indexOf(filter) > -1) {
+                        catalogItems[i].style.display = "";
+                    } else {
+                        catalogItems[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        // Animación al hacer scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html> 

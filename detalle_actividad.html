@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Actividad</title>
+    <link rel="stylesheet" href="detalle_actividad.css">
+</head>
+<body>
+    <div class="background-particles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="detail-container scroll-animate">
+        <h1 id="activityTitle"></h1>
+        <img id="activityImage" src="" alt="">
+        <p id="activityDescription"></p>
+        <p id="activityPrice"></p>
+        <p id="activityDuration"></p>
+        <div class="button-container scroll-animate">
+            <a href="catalogo.html" class="back-button">Regresar al Catálogo</a>
+            <a href="menu.html" id="menuButton" class="back-button menu-button" style="display: none;">Ver Menú</a>
+        </div>
+    </div>
+
+    <script>
+        const activities = {
+            tirolesa: {
+                title: "Aventura en Tirolesa",
+                image: "img/tirolesa.jpg",
+                description: "Experimenta la emoción pura de deslizarte por el aire en nuestra tirolesa de última generación. Disfruta de vistas panorámicas impresionantes mientras te elevas sobre la exuberante vegetación y la majestuosa cascada. Una aventura inolvidable para los amantes de la adrenalina y la naturaleza.",
+                price: "L.150.00 por persona",
+                duration: "30-45 minutos",
+                showMenuButton: false
+            },
+            cascada: {
+                title: "Tour de la Cascada y Naturaleza",
+                image: "img/cascada.jpg",
+                description: "Un relajante recorrido guiado por senderos naturales que te llevarán a los mejores puntos de vista de la majestuosa cascada y la flora local. Ideal para los amantes de la tranquilidad y la belleza natural.",
+                price: "L.100.00 por persona",
+                duration: "1-2 horas",
+                showMenuButton: false
+            },
+            picnic: {
+                title: "Día de Picnic Familiar",
+                image: "img/nacimiento.jpg",
+                description: "Disfruta de nuestras amplias y hermosas áreas verdes, perfectas para un día de picnic relajante con toda la familia.  Un ambiente sereno para desconectar y disfrutar de la naturaleza.",
+                price: "L.50.00 por persona",
+                duration: "Medio día / Día completo",
+                showMenuButton: false
+            },
+            gastronomica: {
+                title: "Experiencia Gastronómica",
+                image: "img/rotulo.jpg",
+                description: "Deléitate con la auténtica cocina local en nuestro restaurante, con ingredientes frescos y un ambiente acogedor junto al río. Una experiencia culinaria que deleitará tus sentidos.",
+                price: "Desde L.150.00",
+                duration: "N/A",
+                showMenuButton: true
+            },
+            kayak: {
+                title: "Aventura en Kayak",
+                image: "img/kayak.jpg",
+                description: "Explora las tranquilas aguas del río en kayak, una forma perfecta de conectar con la naturaleza y disfrutar del paisaje desde una perspectiva única.",
+                price: "L.120.00 por persona",
+                duration: "1-1.5 horas",
+                showMenuButton: false
+            },
+            aves: {
+                title: "Observación de Aves",
+                image: "img/mirador.jpg",
+                description: "Únete a nuestros expertos guías en un tour para descubrir la increíble variedad de aves locales en su hábitat natural. Una experiencia enriquecedora para los amantes de la ornitología y la vida silvestre.",
+                price: "L.50.00 por persona",
+                duration: "1-2 horas",
+                showMenuButton: false
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const activityKey = urlParams.get('activity');
+            const menuButton = document.getElementById('menuButton');
+
+            if (activityKey && activities[activityKey]) {
+                const activity = activities[activityKey];
+                document.getElementById('activityTitle').textContent = activity.title;
+                document.getElementById('activityImage').src = activity.image;
+                document.getElementById('activityImage').alt = activity.title;
+                document.getElementById('activityDescription').textContent = activity.description;
+                document.getElementById('activityPrice').textContent = "Precio: " + activity.price;
+                document.getElementById('activityDuration').textContent = "Duración aproximada: " + activity.duration;
+
+                if (activity.showMenuButton) {
+                    menuButton.style.display = "inline-block";
+                } else {
+                    menuButton.style.display = "none";
+                }
+
+            } else {
+                // Default content if no activity is found or specified
+                document.getElementById('activityTitle').textContent = "Detalle de la Actividad";
+                document.getElementById('activityImage').style.display = "none"; // Hide image if no specific activity
+                document.getElementById('activityDescription').textContent = "Selecciona una actividad del catálogo para ver sus detalles.";
+                document.getElementById('activityPrice').textContent = "";
+                document.getElementById('activityDuration').textContent = "";
+                menuButton.style.display = "none"; // Hide menu button by default
+            }
+        });
+
+        // Animación al hacer scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html> 
